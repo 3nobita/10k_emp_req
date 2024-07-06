@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emp Request</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ccc;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Send Request</h1>
+        <form id="recordForm">
+            <input type="text" id="recordInputName" placeholder="Enter Name" required>
+            <input type="text" id="recordInputDestination" placeholder="Enter Destination" required>
+            <input type="text" id="recordInputWork" placeholder="Enter Work" required>
+            <input type="text" id="recordInputCash" placeholder="Enter Amount" required>
+            <label for="vehicle">Choose a vehicle:</label>
+            <select name="vehicle" id="vehicle">
+                <option value="Car">Car</option>
+                <option value="Flight">Flight</option>
+                <option value="Auto">Auto</option>
+                <option value="Train">Train</option>
+            </select>
+            <button type="submit">Send Request</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const recordForm = document.getElementById('recordForm');
+            const recordInputName = document.getElementById('recordInputName');
+            const recordInputDestination = document.getElementById('recordInputDestination');
+            const recordInputWork = document.getElementById('recordInputWork');
+            const recordInputCash = document.getElementById('recordInputCash');
+            const vehicleSelect = document.getElementById('vehicle');
+
+            recordForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const record = {
+                    name: recordInputName.value,
+                    destination: recordInputDestination.value,
+                    work: recordInputWork.value,
+                    work: recordInputCash.value,
+                    vehicle: vehicleSelect.value
+                };
+                localStorage.setItem('record', JSON.stringify(record));
+                recordInputName.value = '';
+                recordInputDestination.value = '';
+                recordInputWork.value = '';
+                recordInputCash.value = '';
+                vehicleSelect.value = 'Car';
+                alert('Record sent!');
+            });
+        });
+    </script>
+</body>
+
+</html>
