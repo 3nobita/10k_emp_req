@@ -4,125 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emp Request</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Travel Request Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #ccc;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
         }
 
-        .container {
-            background-color: white;
-            padding: 20px;
+        .heading {
+            text-align: center;
+            color: #0f0f69;
+            margin-top: 1em;
+        }
+
+        .logo {
+            display: block;
+            margin: 1em auto;
+            height: 50px;
+            width: 100px;
+        }
+
+        .note {
+            background-color: #eef7d1;
+            padding: 1em;
+            border-radius: 5px;
+            margin: 1em auto;
+            max-width: 800px;
+            font-size: 0.9em;
+        }
+
+        b {
+            background-color: #cdf009;
+        }
+
+        h3 {
+            color: red;
+            text-align: center;
+            margin: 0.5em 0;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 1em;
+            margin: 1em auto;
+            max-width: 800px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            box-sizing: border-box;
         }
 
-        h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
+        label {
+            display: block;
+            margin: 10px 0 5px;
         }
 
         input[type="text"],
-        select {
-            width: 100%;
+        input[type="number"],
+        input[type="email"],
+        input[type="date"] {
+            width: calc(100% - 22px);
             padding: 10px;
-            margin: 10px 0;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
         }
 
-        button {
-            padding: 10px 20px;
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        hr {
             border: none;
-            background-color: #6c63ff;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+            height: 1px;
+            background-color: #ccc;
+            margin: 1em 0;
         }
 
+        .Pone {
+            text-align: center;
+        }
 
+        .centered {
+            text-align: center;
+        }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
+        .submit-button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
 
-            h1 {
-                font-size: 20px;
-            }
-
-            button {
-                padding: 10px;
-            }
+        .submit-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Send Request</h1>
-        <form id="recordForm">
-            <input type="text" id="recordInputName" placeholder="Enter Name" required>
-            <input type="text" id="recordInputDestination" placeholder="Enter Destination" required>
-            <input type="text" id="recordInputWork" placeholder="Enter Work" required>
-            <input type="text" id="recordInputCash" placeholder="Enter Amount" required>
-            <label for="vehicle">Choose a vehicle:</label>
-            <select name="vehicle" id="vehicle">
-                <option value="Car">Car</option>
-                <option value="Flight">Flight</option>
-                <option value="Auto">Auto</option>
-                <option value="Train">Train</option>
-            </select>
-            <button type="submit">Send Request</button>
-        </form>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhekDPGVGK7t6pEOYOVQaJNa3XQ0RRNXkd_ghJTJUj9YmpaOoILiF-eKs-o2pSWBa_dc934bqqQeHpTJQY7TI1LUvPeF_lf4k5O5p95UBm_tvjMskinpwdE5dF3OZ1u8giaVHeJrsmRRnfbnr8S51ss6BkcJQVIHi8AeTyexUUD37-wfiwE0qriyxKRMnk/s1600/CEA.jpg"
+        alt="Logo" class="logo">
+    <h1 class="heading">Travel Request Form</h1>
+    <div class="note">
+        <b> Please note</b>: All requests must be forwarded at least <b>3 business days</b> in advance of travel date
+        (In case of <b>Planned travel for Instructors/employees at least 30-60 days</b> in advance of travel
+        date).<br><br>
+        <b>Please complete</b> all information (white cells).<br><br>
+        <b>Note</b>: Indicate traveller's name and departure date in the subject line.<br><br>
+        <b>Send an e-mail request to</b> the <b>approver</b> and / <b>reporting superior</b>.<br><br>
+        <b>Primary Point for Booking : Travelcare Travelcare@InterGlobe.com</b>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const recordForm = document.getElementById('recordForm');
-            const recordInputName = document.getElementById('recordInputName');
-            const recordInputDestination = document.getElementById('recordInputDestination');
-            const recordInputWork = document.getElementById('recordInputWork');
-            const recordInputCash = document.getElementById('recordInputCash');
-            const vehicleSelect = document.getElementById('vehicle');
+    <div class="form-section">
+        <label for="purpose">Purpose of Trip:</label>
+        <input type="text" id="purpose">
 
-            recordForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const record = {
-                    name: recordInputName.value,
-                    destination: recordInputDestination.value,
-                    work: recordInputWork.value,
-                    work: recordInputCash.value,
-                    vehicle: vehicleSelect.value
-                };
-                localStorage.setItem('record', JSON.stringify(record));
-                recordInputName.value = '';
-                recordInputDestination.value = '';
-                recordInputWork.value = '';
-                recordInputCash.value = '';
-                vehicleSelect.value = 'Car';
-                alert('Record sent!');
-            });
-        });
-    </script>
+        <label for="reason">Reason of Trip:</label>
+        <input type="text" id="reason">
+
+        <label for="visit">Being Visited:</label>
+        <input type="text" id="visit">
+
+        <label for="date">Date Of Request:</label>
+        <input type="date" id="date">
+
+        <label for="Pnumber">Phone Number:</label>
+        <input type="number" id="Pnumber">
+
+        <label for="Pronumber">Project Number:</label>
+        <input type="number" id="Pronumber">
+    </div>
+    <div class="form-section">
+        <label for="TAN">Travel Arranger Name:</label>
+        <input type="text" id="TAN" placeholder="Enter Name">
+        <input type="email" placeholder="Enter Email">
+        <input type="number" placeholder="Enter Number">
+
+        <label for="TN">Traveller Name:</label>
+        <input type="text" id="TN" placeholder="Enter Name">
+        <input type="email" placeholder="Enter Email">
+        <input type="number" placeholder="Enter Number">
+
+        <label for="TN">Names of others traveling with traveller:</label>
+        <input type="text" id="TAN" placeholder="Enter Name">
+        <input type="email" placeholder="Enter Email">
+        <input type="number" placeholder="Enter Number">
+
+        <label for="approver">Approver Name:</label>
+        <input type="text" id="approver">
+    </div>
+    <div class="form-section">
+        <h3>RESERVATION STATUS</h3>
+        <div class="checkbox-group">
+            <input type="checkbox" id="new" name="reservation_status" value="New">
+            <label for="new">New</label>
+
+            <input type="checkbox" id="change" name="reservation_status" value="Change">
+            <label for="change">Change</label>
+
+            <input type="checkbox" id="cancel" name="reservation_status" value="Cancel">
+            <label for="cancel">Cancel</label>
+        </div>
+        <label for="file-number">File Number:</label>
+        <input type="text" id="file-number">
+    </div>
+    <div class="form-section">
+        <h3>TRAVEL DETAILS</h3>
+        <div class="checkbox-group">
+            <input type="checkbox" id="air" name="travel_mode" value="Air">
+            <label for="air">Air</label>
+
+            <input type="checkbox" id="hotel" name="travel_mode" value="Hotel">
+            <label for="hotel">Hotel</label>
+
+            <input type="checkbox" id="car" name="travel_mode" value="Car">
+            <label for="car">Car</label>
+
+            <input type="checkbox" id="rail" name="travel_mode" value="Rail">
+            <label for="rail">Rail</label>
+
+            <input type="checkbox" id="other" name="travel_mode" value="Other">
+            <label for="other">Other</label>
+        </div>
+    </div>
+    <div class="form-section">
+        <h3>FLIGHT / RAIL INFORMATION</h3>
+        <label for="departure-date">Departure Date:</label>
+        <input type="date" id="departure-date">
+
+        <label for="depart-from">Depart From (City/Country):</label>
+        <input type="text" id="depart-from">
+
+        <label for="departure-time">Desired Departure Time:</label>
+        <input type="text" id="departure-time">
+
+        <label for="preferences">Preferences:</label>
+        <input type="text" id="preferences">
+
+        <label for="additional-info">Additional Information:</label>
+        <input type="text" id="additional-info">
+    </div>
+    <div class="form-section">
+        <h3>CAR RENTAL INFORMATION</h3>
+        <label for="rental-company">Car Rental Company:</label>
+        <input type="text" id="rental-company">
+
+        <label for="city-country">City/Country:</label>
+        <input type="text" id="city-country">
+
+        <label for="pickup-date">Pick-up Date:</label>
+        <input type="date" id="pickup-date">
+
+        <label for="dropoff-date">Drop Off Date:</label>
+        <input type="date" id="dropoff-date">
+
+        <label for="party-number">Total number in party:</label>
+        <input type="text" id="party-number">
+
+        <label for="car-preferences">Preferences:</label>
+        <input type="text" id="car-preferences">
+
+        <label for="car-additional-info">Additional Information:</label>
+        <input type="text" id="car-additional-info">
+    </div>
+    <div class="form-section">
+        <h3>HOTEL INFORMATION</h3>
+        <label for="hotel-name">Hotel Name:</label>
+        <input type="text" id="hotel-name">
+
+        <label for="hotel-city-country">City/Country:</label>
+        <input type="text" id="hotel-city-country">
+
+        <label for="checkin-date">Check In Date:</label>
+        <input type="date" id="checkin-date">
+
+        <label for="checkout-date">Check Out Date:</label>
+        <input type="date" id="checkout-date">
+
+        <label for="nights"># Of Nights:</label>
+        <input type="text" id="nights">
+
+        <label for="hotel-preferences">Preferences:</label>
+        <input type="text" id="hotel-preferences">
+
+        <label for="location">Location:</label>
+        <input type="text" id="location">
+    </div>
+    <div class="form-section centered">
+        <h3>CASH ACCESS</h3>
+        <p class="Pone">A reminder to employees travelling to remote locations where access to bank machines providing
+            cash access may be limited, you should always withdraw the estimated amount of cash needed prior to
+            departing from India.</p>
+    </div>
+    <button type="submit" class="submit-button">Submit</button>
+
 </body>
 
 </html>
