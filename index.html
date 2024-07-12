@@ -1,274 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Request Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Calibri, sans-serif;
+            background-color: #f0f8ff;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
         }
 
-        .heading {
-            text-align: center;
-            color: #0f0f69;
-            margin-top: 1em;
-        }
-
-        .logo {
-            display: block;
-            margin: 1em auto;
-            height: 50px;
-            width: 100px;
-        }
-
-        .note {
-            background-color: #eef7d1;
-            padding: 1em;
-            border-radius: 5px;
-            margin: 1em auto;
+        .container {
             max-width: 800px;
-            font-size: 0.9em;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        b {
-            background-color: #cdf009;
-        }
-
-        h3 {
-            color: red;
+        .header {
             text-align: center;
-            margin: 0.5em 0;
+            padding: 20px;
         }
 
-        .form-section {
+        .header img.logo {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        form {
             background-color: #fff;
-            padding: 1em;
-            margin: 1em auto;
-            max-width: 800px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        legend {
+            color: #4CAF50;
+            font-weight: bold;
         }
 
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin-bottom: 8px;
+            color: #333;
         }
 
         input[type="text"],
-        input[type="number"],
+        input[type="tel"],
         input[type="email"],
-        input[type="date"] {
-            width: calc(100% - 22px);
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        select,
+        datalist {
+            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
 
-        .checkbox-group label {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ccc;
-            margin: 1em 0;
-        }
-
-        .Pone {
-            text-align: center;
-        }
-
-        .centered {
-            text-align: center;
-        }
-
-        .submit-button {
-            display: block;
+        input[type="submit"] {
             width: 100%;
-            max-width: 200px;
-            margin: 20px auto;
-            padding: 10px;
+            padding: 15px;
             background-color: #4CAF50;
-            color: white;
             border: none;
             border-radius: 5px;
+            color: white;
             font-size: 16px;
             cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease;
         }
 
-        .submit-button:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .contact-us {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-us ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-us li {
+            margin: 5px 0;
         }
     </style>
 </head>
-
 <body>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhekDPGVGK7t6pEOYOVQaJNa3XQ0RRNXkd_ghJTJUj9YmpaOoILiF-eKs-o2pSWBa_dc934bqqQeHpTJQY7TI1LUvPeF_lf4k5O5p95UBm_tvjMskinpwdE5dF3OZ1u8giaVHeJrsmRRnfbnr8S51ss6BkcJQVIHi8AeTyexUUD37-wfiwE0qriyxKRMnk/s1600/CEA.jpg"
-        alt="Logo" class="logo">
-    <h1 class="heading">Travel Request Form</h1>
-    <div class="note">
-        <b> Please note</b>: All requests must be forwarded at least <b>3 business days</b> in advance of travel date
-        (In case of <b>Planned travel for Instructors/employees at least 30-60 days</b> in advance of travel
-        date).<br><br>
-        <b>Please complete</b> all information (white cells).<br><br>
-        <b>Note</b>: Indicate traveller's name and departure date in the subject line.<br><br>
-        <b>Send an e-mail request to</b> the <b>approver</b> and / <b>reporting superior</b>.<br><br>
-        <b>Primary Point for Booking : Travelcare Travelcare@InterGlobe.com</b>
-    </div>
-    <div class="form-section">
-        <label for="purpose">Purpose of Trip:</label>
-        <input type="text" id="purpose">
-
-        <label for="reason">Reason of Trip:</label>
-        <input type="text" id="reason">
-
-        <label for="visit">Being Visited:</label>
-        <input type="text" id="visit">
-
-        <label for="date">Date Of Request:</label>
-        <input type="date" id="date">
-
-        <label for="Pnumber">Phone Number:</label>
-        <input type="number" id="Pnumber">
-
-        <label for="Pronumber">Project Number:</label>
-        <input type="number" id="Pronumber">
-    </div>
-    <div class="form-section">
-        <label for="TAN">Travel Arranger Name:</label>
-        <input type="text" id="TAN" placeholder="Enter Name">
-        <input type="email" placeholder="Enter Email">
-        <input type="number" placeholder="Enter Number">
-
-        <label for="TN">Traveller Name:</label>
-        <input type="text" id="TN" placeholder="Enter Name">
-        <input type="email" placeholder="Enter Email">
-        <input type="number" placeholder="Enter Number">
-
-        <label for="TN">Names of others traveling with traveller:</label>
-        <input type="text" id="TAN" placeholder="Enter Name">
-        <input type="email" placeholder="Enter Email">
-        <input type="number" placeholder="Enter Number">
-
-        <label for="approver">Approver Name:</label>
-        <input type="text" id="approver">
-    </div>
-    <div class="form-section">
-        <h3>RESERVATION STATUS</h3>
-        <div class="checkbox-group">
-            <input type="checkbox" id="new" name="reservation_status" value="New">
-            <label for="new">New</label>
-
-            <input type="checkbox" id="change" name="reservation_status" value="Change">
-            <label for="change">Change</label>
-
-            <input type="checkbox" id="cancel" name="reservation_status" value="Cancel">
-            <label for="cancel">Cancel</label>
+    <div class="container">
+        <div class="header">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhekDPGVGK7t6pEOYOVQaJNa3XQ0RRNXkd_ghJTJUj9YmpaOoILiF-eKs-o2pSWBa_dc934bqqQeHpTJQY7TI1LUvPeF_lf4k5O5p95UBm_tvjMskinpwdE5dF3OZ1u8giaVHeJrsmRRnfbnr8S51ss6BkcJQVIHi8AeTyexUUD37-wfiwE0qriyxKRMnk/s1600/CEA.jpg" alt="Logo" class="logo">
+            <h1>CAE Simulation Training Private Limited - Travel Request Form</h1>
         </div>
-        <label for="file-number">File Number:</label>
-        <input type="text" id="file-number">
+        <form action="/submit-travel-request" method="post" onsubmit="return formatDateInputs()">
+            <fieldset>
+                <legend>Traveller Information</legend>
+                <label for="travellerName">Traveller Name:</label>
+                <input list="travellerNames" id="travellerName" name="travellerName" required>
+                <datalist id="travellerNames">
+                    <!-- Traveller names options here -->
+                </datalist>
+
+                <label for="mobileNo">Mobile No.:</label>
+                <input type="tel" id="mobileNo" name="mobileNo" required>
+
+                <label for="dateOfRequest">Date of Request:</label>
+                <input type="date" id="dateOfRequest" name="dateOfRequest" required>
+
+                <label for="employeeCode">Employee Code:</label>
+                <input type="text" id="employeeCode" name="employeeCode" required>
+
+                <label for="departmentName">Department Name:</label>
+                <input list="departments" id="departmentName" name="departmentName" required>
+                <datalist id="departments">
+                    <!-- Department names options here -->
+                </datalist>
+
+                <label for="bandDesignation">Band & Designation:</label>
+                <input list="bandDesignations" id="bandDesignation" name="bandDesignation" required>
+                <datalist id="bandDesignations">
+                    <!-- Band designations options here -->
+                </datalist>
+
+                <label for="emailAddress">E-Mail Address:</label>
+                <input type="email" id="emailAddress" name="emailAddress" required>
+
+                <label for="hodName">HOD Name:</label>
+                <select id="hodName" name="hodName" required>
+                    <!-- HOD names options here -->
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Flight / Rail Information</legend>
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+
+                <label for="departFrom">Depart From (City/Country):</label>
+                <input list="cities" id="departFrom" name="departFrom" required>
+                <datalist id="cities">
+                    <!-- City names options here -->
+                </datalist>
+
+                <label for="departureTime">Desired Departure Time (e.g. 13:30:55):</label>
+                <input type="time" id="departureTime" name="departureTime" required>
+
+                <label for="arrivalTo">Arrival To (City/Country):</label>
+                <input list="cities" id="arrivalTo" name="arrivalTo" required>
+
+                <label for="arrivalTime">Desired Arrival Time (e.g. 13:30:55):</label>
+                <input type="time" id="arrivalTime" name="arrivalTime" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Hotel Information</legend>
+                <label for="hotelName">Hotel Name:</label>
+                <input type="text" id="hotelName" name="hotelName" required>
+
+                <label for="hotelCity">City/Country:</label>
+                <input list="cities" id="hotelCity" name="hotelCity" required>
+
+                <label for="checkInDate">Check in Date:</label>
+                <input type="date" id="checkInDate" name="checkInDate" required>
+
+                <label for="checkOutDate">Check Out Date:</label>
+                <input type="date" id="checkOutDate" name="checkOutDate" required>
+
+                <label for="nights"># of Nights:</label>
+                <input type="number" id="nights" name="nights" required>
+
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="airport">Airport</option>
+                    <option value="downtown">Downtown</option>
+                </select>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <p>If you have any queries, please feel free to contact:</p>
+            <ul>
+                <li>Name: Sandeep Bhatia</li>
+                <li>Mobile: 9644304333</li>
+                <li>Email: sandeep.bhatia@cae.com</li>
+            </ul>
+        </section>
     </div>
-    <div class="form-section">
-        <h3>TRAVEL DETAILS</h3>
-        <div class="checkbox-group">
-            <input type="checkbox" id="air" name="travel_mode" value="Air">
-            <label for="air">Air</label>
-
-            <input type="checkbox" id="hotel" name="travel_mode" value="Hotel">
-            <label for="hotel">Hotel</label>
-
-            <input type="checkbox" id="car" name="travel_mode" value="Car">
-            <label for="car">Car</label>
-
-            <input type="checkbox" id="rail" name="travel_mode" value="Rail">
-            <label for="rail">Rail</label>
-
-            <input type="checkbox" id="other" name="travel_mode" value="Other">
-            <label for="other">Other</label>
-        </div>
-    </div>
-    <div class="form-section">
-        <h3>FLIGHT / RAIL INFORMATION</h3>
-        <label for="departure-date">Departure Date:</label>
-        <input type="date" id="departure-date">
-
-        <label for="depart-from">Depart From (City/Country):</label>
-        <input type="text" id="depart-from">
-
-        <label for="departure-time">Desired Departure Time:</label>
-        <input type="text" id="departure-time">
-
-        <label for="preferences">Preferences:</label>
-        <input type="text" id="preferences">
-
-        <label for="additional-info">Additional Information:</label>
-        <input type="text" id="additional-info">
-    </div>
-    <div class="form-section">
-        <h3>CAR RENTAL INFORMATION</h3>
-        <label for="rental-company">Car Rental Company:</label>
-        <input type="text" id="rental-company">
-
-        <label for="city-country">City/Country:</label>
-        <input type="text" id="city-country">
-
-        <label for="pickup-date">Pick-up Date:</label>
-        <input type="date" id="pickup-date">
-
-        <label for="dropoff-date">Drop Off Date:</label>
-        <input type="date" id="dropoff-date">
-
-        <label for="party-number">Total number in party:</label>
-        <input type="text" id="party-number">
-
-        <label for="car-preferences">Preferences:</label>
-        <input type="text" id="car-preferences">
-
-        <label for="car-additional-info">Additional Information:</label>
-        <input type="text" id="car-additional-info">
-    </div>
-    <div class="form-section">
-        <h3>HOTEL INFORMATION</h3>
-        <label for="hotel-name">Hotel Name:</label>
-        <input type="text" id="hotel-name">
-
-        <label for="hotel-city-country">City/Country:</label>
-        <input type="text" id="hotel-city-country">
-
-        <label for="checkin-date">Check In Date:</label>
-        <input type="date" id="checkin-date">
-
-        <label for="checkout-date">Check Out Date:</label>
-        <input type="date" id="checkout-date">
-
-        <label for="nights"># Of Nights:</label>
-        <input type="text" id="nights">
-
-        <label for="hotel-preferences">Preferences:</label>
-        <input type="text" id="hotel-preferences">
-
-        <label for="location">Location:</label>
-        <input type="text" id="location">
-    </div>
-    <div class="form-section centered">
-        <h3>CASH ACCESS</h3>
-        <p class="Pone">A reminder to employees travelling to remote locations where access to bank machines providing
-            cash access may be limited, you should always withdraw the estimated amount of cash needed prior to
-            departing from India.</p>
-    </div>
-    <button type="submit" class="submit-button">Submit</button>
-
 </body>
-
 </html>
